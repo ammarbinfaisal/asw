@@ -1,146 +1,249 @@
-import localFont from "next/font/local"
+import React from 'react';
+import { Briefcase, ChevronDown, GraduationCap, LineChart, Pen, Book, Database } from 'lucide-react';
 
-const font = localFont({
-  src: "./BebasNeue.ttf",
-})
+const Card = () => {
+  const names = ['ABDUL', 'SAMAD', 'WANI'];
 
-const delius = localFont({
-  src: "./DeliusSwashCaps.ttf",
-})
-
-const ServiceCard = ({ icon, title, description }: {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-}) => {
   return (
-    <div className="flex flex-col items-center text-center p-8">
-      <div className="w-24 h-24 mb-8">
-        {icon}
-      </div>
-      <h3 className="text-2xl mb-4 uppercase tracking-wider">{title}</h3>
-      <p className="leading-relaxed max-w-md" 
-        style={delius.style}
-      >{description}</p>
-    </div>
-  );
-};
+    <div className="max-w-2xl mx-auto min-h-screen flex flex-col p-6 xl:p-12">
+      <div className="flex-1 flex flex-col gap-4">
 
-const ServicesSection = () => {
-  return (
-    <div className="bg-[#2D2D2D] text-[#DCD7D2] py-20">
-      <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl text-center mb-4 uppercase tracking-wider">
-          More than full-stack inbound marketing
-        </h2>
-        <p className="text-center italic text-2xl mb-20 max-w-4xl mx-auto leading-relaxed" style={delius.style}>
-          Creating data-driven strategies and immersive content for meaningful communities.
-        </p>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          <ServiceCard
-            icon={
-              <svg viewBox="0 0 24 24" className="w-full h-full fill-current">
-                <path d="M0 0h12v12H0zM12 12h12v12H12z" />
-              </svg>
-            }
-            title="Digital Strategy"
-            description="Holistic digital strategies that maximize the capabilities of new or existing channels. Make your communities and channels work together."
-          />
-          
-          <ServiceCard
-            icon={
-              <svg viewBox="0 0 24 24" className="w-full h-full stroke-current fill-none">
-                <circle cx="12" cy="12" r="10" strokeWidth="2" />
-                <line x1="12" y1="2" x2="12" y2="22" strokeWidth="2" />
-              </svg>
-            }
-            title="Social Media"
-            description="Custom social media strategies that help your business grow brand awareness, build trust and convert followers."
-          />
-          
-          <ServiceCard
-            icon={
-              <svg viewBox="0 0 24 24" className="w-full h-full stroke-current fill-none">
-                <path d="M3 3v18h18" strokeWidth="2" strokeLinecap="round" />
-                <path d="M3 18l6-6 4 4 8-8" strokeWidth="2" strokeLinecap="round" />
-              </svg>
-            }
-            title="Content"
-            description="Data-driven content that doesn't skimp on creativity. Stand out with content your community will remember, talk about and share."
-          />
-          
-          <ServiceCard
-            icon={
-              <svg viewBox="0 0 24 24" className="w-full h-full stroke-current fill-none">
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" strokeWidth="2" />
-              </svg>
-            }
-            title="Copywriting"
-            description="SEO-focused copywriting that speaks to the concerns and interests of your community, and mobilizes them to take action."
+        <div className="flex items-center justify-center gap-4 mb-16">
+          {names.map((name, index) => (
+            <React.Fragment key={name}>
+              <span className="text-[#264653]">{name}</span>
+              {index < names.length - 1 && (
+                <div className="w-2 h-2 rounded-full bg-[#264653]" />
+              )}
+            </React.Fragment>
+          ))}
+        </div>
+        <h1 className="text-3xl xl:text-6xl font-light text-[#264653]">
+          Hello,<br />
+          My name is <span className="font-medium">Abdul Samad</span>
+        </h1>
+
+        <div className="w-80 h-80 rounded-full overflow-hidden ml-auto">
+          <img
+            src="/pic.jpeg"
+            alt="Profile"
+            className="w-full h-full object-cover"
           />
         </div>
       </div>
+
+      <div className="flex flex-col items-center gap-2 pb-8">
+        <button className="px-6 py-2 rounded-full bg-white shadow-lg text-sm text-[#264653] hover:bg-[#264653] hover:text-white transition-colors">
+          SCROLL DOWN
+        </button>
+        <ChevronDown className="animate-bounce text-[#264653]" />
+      </div>
     </div>
   );
 };
 
+const Skills = ({ skills }) => (
+  <div className="mb-8">
+    <h2 className="text-sm font-medium mb-4 border-b border-[#264653] pb-1 text-[#264653]">SKILLS</h2>
+    <div className="space-y-3">
+      {skills.map((skill) => (
+        <div key={skill.name} className="flex items-center">
+          <span className="w-32 text-sm text-[#264653]">{skill.name}</span>
+          <div className="flex gap-1">
+            {[...Array(5)].map((_, index) => (
+              <div
+                key={index}
+                className={`w-2.5 h-2.5 rounded-full ${index < skill.level ? 'bg-[#264653]' : 'bg-gray-200'
+                  }`}
+              />
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+);
 
-const PortfolioSite = () => {
-  return (
-    <div className="relative">
-      {/* Fixed background */}
-      <div
-        className="fixed inset-0 bg-center bg-no-repeat bg-cover"
-        style={{
-          backgroundImage: "url('/bg.jpg')",
-          transform: "translateZ(0)",
-          willChange: "transform"
-        }}
-      />
-      
-      {/* Content wrapper */}
-      <div className="relative">
-        {/* First section */}
-        <div className="bg-[#2D2D2D]  text-[#DCD7D2]" style={font.style}>
-          <nav className="flex justify-between items-center p-8">
-            <a href="#about" className="text-lg ">ABOUT</a>
-            <a href="#portfolio" className="text-lg ">PORTFOLIO</a>
-            <a href="#contact" className="text-lg ">CONTACT</a>
-          </nav>
-
-          <header className="px-8 pt-16 pb-8">
-            <h1 className="text-[7rem] font-bold text-center tracking-wider text-[#DCD7D2]">
-              ABDUL SAMAD WANI
-            </h1>
-            <div className="flex justify-between items-center mt-4 text-md">
-              <p>BASED IN INDIA, WORKING WORLDWIDE</p>
-              <div className="flex gap-4">
-                <span>PPC SPECIALIST</span>
-                <span>|</span>
-                <span>ADS ACCOUNT MANAGER</span>
-              </div>
-              <a href="https://linkedin.com/in/abdulsamadwani" className="">LINKEDIN</a>
+const Specialties = ({ specialties }) => (
+  <div>
+    <h2 className="text-sm font-medium mb-4 border-b border-[#264653] pb-1 text-[#264653]">Specialties</h2>
+    <div className="flex gap-6 mt-4">
+      {specialties.map((specialty) => {
+        const IconComponent = specialty.icon;
+        return (
+          <div key={specialty.name} className="flex flex-col items-center gap-2">
+            <div className="w-16 h-16 rounded-full bg-[#264653] bg-opacity-20 flex items-center justify-center">
+              <IconComponent className="w-6 h-6 text-[#264653]" />
             </div>
-          </header>
-        </div>
+            <span className="text-xs text-center text-[#264653]">{specialty.name}</span>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+);
 
-        {/* show background image */}
-        <div className="min-h-96 backdrop-filter backdrop-blur-sm">
-        </div>
+const TimelineItem = ({ title, period, company, type }) => (
+  <div className="flex items-start gap-4">
+    <div className="relative">
+      <div className="absolute left-0 w-px h-full bg-[#264653] bg-opacity-20" />
+      <div className="relative w-3 h-3 rounded-full bg-[#264653] mt-2" />
+    </div>
+    <div className="flex-1 pb-6">
+      <h3 className="text-lg font-medium text-[#264653]">{title}</h3>
+      <p className="text-sm text-[#e76f51] font-medium">{period}</p>
+      <div className="mt-1">
+        <span className="text-sm text-[#264653]">{company}</span>
+        {type && (
+          <>
+            <span className="mx-2 text-[#264653] opacity-50">•</span>
+            <span className="text-sm text-[#264653] opacity-75">{type}</span>
+          </>
+        )}
+      </div>
+    </div>
+  </div>
+);
 
-        {/* Second section */}
-        <div className="min-h-screen bg-[#2D2D2D] text-[#DCD7D2]" style={font.style}>
-         
-          <ServicesSection />
+const Timeline = ({ icon: Icon, title, items }) => (
+  <div className="relative mb-8">
+    <div className="flex items-center gap-4 mb-6">
+      <Icon className="w-8 h-8 text-[#264653]" />
+      <h2 className="text-xl font-semibold text-[#264653]">{title}</h2>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 400 20"
+        className="h-5 ml-auto hidden xl:block"
+      >
+        <line x1="10" y1="10" x2="490" y2="10" stroke="#264653" strokeWidth="4" />
+        <circle cx="10" cy="10" r="8" fill="#264653" />
+      </svg>
+    </div>
+    <div className="pl-4">
+      {items.map((item, index) => (
+        <TimelineItem key={index} {...item} />
+      ))}
+    </div>
+  </div>
+);
 
-          <footer className="py-8 px-8 text-center text-md">
-            <p>© 2024 Abdul Samad Wani. All rights reserved.</p>
-          </footer>
+const ResumeSection = () => {
+  const experiences = [
+    {
+      title: 'Account Manager (Google Ads)',
+      company: 'Engross Digital Marketing LLC',
+      period: 'Present',
+      type: 'Full-time'
+    },
+    {
+      title: 'Content Writer',
+      company: 'Freelance',
+      period: 'Present',
+      type: 'Part-time'
+    },
+    {
+      title: 'Education Industry Professional',
+      company: 'Various Institutions',
+      period: '10+ years',
+      type: 'Full-time'
+    }
+  ];
+
+  const education = [
+    {
+      title: 'Digital Marketing Certifications',
+      company: 'Google & Industry Training',
+      period: 'Recent'
+    }
+  ];
+
+  return (
+    <div className="max-w-2xl mx-auto p-6 bg-white bg-opacity-50 rounded-lg shadow-lg">
+      <Timeline icon={Briefcase} title="Experiences" items={experiences} />
+      <Timeline icon={GraduationCap} title="Education & Certifications" items={education} />
+    </div>
+  );
+};
+
+const Bio = () => (
+  <div className="flex flex-col items-start justify-center p-4 xl:pl-12">
+    <div className="w-full max-w-2xl">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" className='w-3/4'>
+        <path
+          d="M 20,20 Q 350,20 350,80"
+          fill="none"
+          stroke="#264653"
+          strokeWidth="2"
+        />
+        {/* <circle at the end of the curve */}
+        <circle cx="350" cy="80" r="4" fill="#264653" />
+      </svg>
+      <div className="rounded-3xl bg-white bg-opacity-50 shadow-lg p-8">
+        <div className="max-w-2xl">
+          <p className="text-sm text-[#264653]">
+            Transitioning from a <span className="text-[#264653] font-medium">decade-long journey in education</span>,
+            I'm now an <span className="text-[#264653] font-medium">Account Manager specializing in Google Ads</span> at
+            Engross Digital Marketing LLC. I combine my analytical skills with creative digital marketing strategies
+            to drive business growth and ROI for our clients. With expertise in keyword research, A/B testing, and
+            data analysis, I'm passionate about staying ahead in this dynamic field while maintaining my commitment
+            to educational causes through content writing and data-driven insights.
+          </p>
         </div>
+      </div>
+    </div>
+    <SkillsAndSpecialties />
+  </div>
+);
+
+const ProfileCard = () => {
+  const skills = [
+    { name: 'Google Ads', level: 5 },
+    { name: 'Digital Marketing', level: 5 },
+    { name: 'Data Analysis', level: 4 },
+    { name: 'Content Writing', level: 5 },
+    { name: 'Education', level: 5 }
+  ];
+
+  const specialties = [
+    { name: 'Digital Marketing', icon: LineChart },
+    { name: 'Content Writing', icon: Pen },
+    { name: 'Education', icon: Book },
+    { name: 'Data Analysis', icon: Database }
+  ];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-white to-[#f4a261] bg-opacity-50 text-[#264653]">
+      <Card />
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
+        <Bio />
+        <ResumeSection />
       </div>
     </div>
   );
 };
 
-export default PortfolioSite;
+export default ProfileCard;
+
+const SkillsAndSpecialties = () => {
+  const skills = [
+    { name: 'Google Ads', level: 5 },
+    { name: 'Digital Marketing', level: 5 },
+    { name: 'Data Analysis', level: 4 },
+    { name: 'Content Writing', level: 5 },
+    { name: 'Education', level: 5 }
+  ];
+
+  const specialties = [
+    { name: 'Digital Marketing', icon: LineChart },
+    { name: 'Content Writing', icon: Pen },
+    { name: 'Education', icon: Book },
+    { name: 'Data Analysis', icon: Database }
+  ];
+
+  return (
+    <div className="max-w-md xl:ml-12 my-12">
+      <Skills skills={skills} />
+      <Specialties specialties={specialties} />
+    </div>
+  );
+};
