@@ -168,7 +168,7 @@ const ResumeSection = () => {
 const Bio = () => (
   <div className="flex flex-col items-start justify-center p-4 xl:pl-12">
     <div className="w-full max-w-2xl">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" className='w-3/4'>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" className='w-3/s'>
         <path
           d="M 20,20 Q 350,20 350,80"
           fill="none"
