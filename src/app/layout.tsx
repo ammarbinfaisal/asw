@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import {Fredoka} from "next/font/google";
+import { Lato } from "next/font/google";
 
-const font = Fredoka({
+const font = Lato({
   display: "swap",
   weight: ["400"],
   subsets: ["latin"],
