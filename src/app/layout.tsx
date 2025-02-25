@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Lato } from "next/font/google";
+import { Montserrat } from "next/font/google";
 
-const font = Lato({
+const font = Montserrat({
   display: "swap",
   weight: ["400"],
   subsets: ["latin"],
