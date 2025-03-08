@@ -1,6 +1,5 @@
-import React from 'react';
-import { Link, MessageCircle } from 'lucide-react';
 import Image from 'next/image';
+import React from 'react';
 
 interface WhatsAppButtonProps {
     phoneNumber: string;
@@ -23,9 +22,11 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
                 md:w-auto md:bottom-8 md:right-8 md:left-auto md:p-2 md:rounded-full`}
             aria-label="Open WhatsApp chat"
         >
-            <img
+            <Image
                 src="/icons8-whatsapp.svg"
                 alt="WhatsApp"
+                width={32}
+                height={32}
                 className="w-8 h-8 md:w-16 md:h-16"
             />
             <p className="text-white font-bold md:hidden">Let's Chat</p>
