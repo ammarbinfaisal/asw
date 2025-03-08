@@ -13,6 +13,8 @@ import {
   Globe,
 } from 'lucide-react';
 import Image from 'next/image';
+import WhatsAppButton from './WhatsAppButton';
+
 export default function Home() {
   return (
     <>
@@ -192,6 +194,9 @@ export default function Home() {
             </p>
           </div>
         </footer>
-      </div ></>
+      </div >
+      <WhatsAppButton phoneNumber="+919045925301" />
+
+    </>
   );
 }
