@@ -57,6 +57,7 @@
     align-items: center;
     gap: 6px;
     transition: color 0.3s ease;
+    font-weight: 600;
 }
 
 .nav a:hover {
