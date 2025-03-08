@@ -16,7 +16,7 @@ export default function Navigation() {
             if (!headerOffset) return;
 
             const elementPosition = element.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.scrollY - headerOffset - 12;
+            const offsetPosition = elementPosition + window.scrollY - headerOffset * 2;
 
             window.scrollTo({
                 top: offsetPosition,
