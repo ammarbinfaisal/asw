@@ -3,15 +3,20 @@
 import Link from 'next/link';
 import { Zap, Users, Target, Award, Globe } from 'lucide-react';
 import styles from './page.module.css';
+import { useRef } from 'react';
 
 export default function Navigation() {
+    const navRef = useRef<HTMLUListElement>(null);
+
     const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
         e.preventDefault();
         const element = document.getElementById(id);
         if (element) {
-            const headerOffset = 80;
+            const headerOffset = navRef.current?.offsetHeight;
+            if (!headerOffset) return;
+
             const elementPosition = element.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            const offsetPosition = elementPosition + window.scrollY - headerOffset - 12;
 
             window.scrollTo({
                 top: offsetPosition,
@@ -21,7 +26,7 @@ export default function Navigation() {
     };
 
     return (
-        <nav>
+        <nav ref={navRef}>
             <ul className={styles.nav}>
                 <li><Link href="#home" onClick={(e) => handleNavClick(e, 'home')}><Zap size={18} /> Home</Link></li>
                 <li><Link href="#about" onClick={(e) => handleNavClick(e, 'about')}><Users size={18} /> About</Link></li>
