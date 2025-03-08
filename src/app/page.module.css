@@ -1,8 +1,8 @@
 .wrapper {
     font-family: 'Inter', Arial, sans-serif;
-    background: #fff;
     color: #000;
     line-height: 1.6;
+    z-index: 1;
 }
 
 .container {
@@ -13,13 +13,14 @@
 
 /* Header */
 .header {
-    background: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 15px 0; /* Reduced padding */
+    padding: 15px 0;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 100;
+    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.7);
 }
 
 .header .container {
@@ -65,11 +66,11 @@
 
 /* Hero Section */
 .hero {
-    background: #fff;
     color: #000;
     text-align: center;
-    padding: 80px 0; /* Reduced base padding */
-    margin-top: 60px; /* Adjusted for smaller fixed header */
+    padding: 80px 0;
+    margin-top: 40vh;
+    height: 70vh;
 }
 
 .hero h1 {
@@ -144,9 +145,8 @@
 
 /* About Section */
 .about {
-    padding: 50px 0; /* Reduced padding */
+    padding: 50px 0;
     text-align: center;
-    background: #fff;
 }
 
 .about h2 {
@@ -169,7 +169,6 @@
 .services {
     padding: 50px 0;
     text-align: center;
-    background: #fafafa;
 }
 
 .services h2 {
@@ -223,7 +222,6 @@
 .success {
     padding: 50px 0;
     text-align: center;
-    background: #fff;
 }
 
 .success h2 {
@@ -244,8 +242,8 @@
 
 .successItem {
     padding: 15px;
-    background: #f5f5f5;
     border-radius: 5px;
+    background: rgba(245, 245, 245, 0.5);
 }
 
 .successItem svg {
@@ -275,7 +273,6 @@
 .ctaSection {
     padding: 50px 0;
     text-align: center;
-    background: #f0f0f0;
 }
 
 .ctaSection h2 {
@@ -295,11 +292,12 @@
 
 /* Footer */
 .footer {
-    background: #fff;
     color: #000;
-    padding: 20px 0; /* Reduced padding */
+    padding: 20px 0;
     text-align: center;
-    border-top: 1px solid #eee;
+    border-top: 1px solid rgba(238, 238, 238, 0.5);
+    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.7);
 }
 
 .footer a {
@@ -320,6 +318,17 @@
     align-items: center;
     gap: 6px;
     font-size: 14px; /* Smaller base size */
+}
+
+/* bg clip */
+.bg-clip {
+    background: linear-gradient(90deg, teal, darkturquoise);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2 .logo {
+    font-size: xx-large;
 }
 
 /* Responsive Design */
