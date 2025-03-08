@@ -101,7 +101,7 @@ export default function Home() {
               className='font-bold'
             ><Users size={36} /> About Abdul Samad Wani</h2>
             <p>I&apos;m a seasoned PPC and growth strategy expert with a passion for driving measurable business success. With extensive experience in Google Ads, performance marketing, and data analysis, I craft strategies that maximize ROI and fuel sustainable growth. My commitment to continuous learning—backed by certifications in Google Ads and Analytics—ensures I stay ahead of industry trends.</p>
-            <Link href="#contact" className={styles.cta}><Zap size={18} /> Let's Connect</Link>
+            <Link href="#contact" className={styles.cta}><Zap size={18} /> Let&apos;s Connect</Link>
           </div>
         </section>
 
@@ -130,7 +130,7 @@ export default function Home() {
                 <p>Combining creative content and technical expertise to drive traffic and revenue.</p>
               </div>
             </div>
-            <Link href="#contact" className={styles.cta}><Zap size={18} /> Let's Optimize Your Campaigns</Link>
+            <Link href="#contact" className={styles.cta}><Zap size={18} /> Let&apos;s Optimize Your Campaigns</Link>
           </div>
         </section>
 
