@@ -100,7 +100,7 @@ export default function Home() {
             <h2
               className='font-bold'
             ><Users size={36} /> About Abdul Samad Wani</h2>
-            <p>I'm a seasoned PPC and growth strategy expert with a passion for driving measurable business success. With extensive experience in Google Ads, performance marketing, and data analysis, I craft strategies that maximize ROI and fuel sustainable growth. My commitment to continuous learning—backed by certifications in Google Ads and Analytics—ensures I stay ahead of industry trends.</p>
+            <p>I&apos;m a seasoned PPC and growth strategy expert with a passion for driving measurable business success. With extensive experience in Google Ads, performance marketing, and data analysis, I craft strategies that maximize ROI and fuel sustainable growth. My commitment to continuous learning—backed by certifications in Google Ads and Analytics—ensures I stay ahead of industry trends.</p>
             <Link href="#contact" className={styles.cta}><Zap size={18} /> Let's Connect</Link>
           </div>
         </section>
@@ -154,7 +154,7 @@ export default function Home() {
               <div className={styles.successItem}>
                 <Users size={30} />
                 <h3>Client Testimonial</h3>
-                <p>"Abdul's expertise in PPC and analytics transformed our digital strategy, delivering exceptional results." – Client Name</p>
+                <p>&quot;Abdul Samad&apos;s expertise in PPC and analytics transformed our digital strategy, delivering exceptional results.&quot; – Client Name</p>
               </div>
             </div>
             <p className={styles.note}>Detailed case studies available upon request.</p>
@@ -167,7 +167,7 @@ export default function Home() {
             <h2
               className='font-bold'
             ><Rocket size={36} /> Ready to Elevate Your Digital Marketing?</h2>
-            <p>Let's leverage my expertise in PPC, analytics, and growth strategies to achieve remarkable results for your business.</p>
+            <p>Let&apos;s leverage my expertise in PPC, analytics, and growth strategies to achieve remarkable results for your business.</p>
             <Link href="#contact" className={styles.cta}><Zap size={18} /> Get Started Today</Link>
           </div>
         </section>
