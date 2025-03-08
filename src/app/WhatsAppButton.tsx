@@ -29,7 +29,7 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
                 height={32}
                 className="w-8 h-8 md:w-16 md:h-16"
             />
-            <p className="text-white font-bold md:hidden">Let's Chat</p>
+            <p className="text-white font-bold md:hidden">Let&apos;s Chat</p>
         </a>
     );
 };
