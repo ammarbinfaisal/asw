@@ -11,11 +11,8 @@ import {
   Search,
   Zap,
   Globe,
-  CheckCircle,
-  Tag
 } from 'lucide-react';
 import Image from 'next/image';
-import ScrollAnimatedChart from './ScrollChart';
 export default function Home() {
   return (
     <>
