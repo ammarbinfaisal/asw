@@ -82,7 +82,7 @@ export default function Home() {
                   <p className="font-bold">Google Tag Manager</p>
                 </div>
                 <div className="flex flex-col items-center justify-center">
-                  <TrendingUp size={40} className="mx-auto mb-2" />
+                  <Image src="/growth.png" alt="Google Tag Manager" width={50} height={50} />
                   <p className="font-bold"><strong>30%</strong> Reduction in CPA</p>
                 </div>
                 <div className="flex flex-col items-center justify-center">
