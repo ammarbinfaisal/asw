@@ -206,11 +206,12 @@
     transform: translateY(-5px);
 }
 
-.serviceItem h3 {
+.serviceItem h3, .successItem h3 {
     font-size: 20px; /* Smaller base size */
     margin-bottom: 8px;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 6px;
 }
 

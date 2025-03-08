@@ -56,8 +56,9 @@ export default function Home() {
                   with Expert PPC Strategies
                 </div>
               </h1>
-              <p className="text-lg md:text-xl mb-4 flex items-center justify-center gap-2">
-                <PieChart size={24} /> Maximize ROI with Google Ads, Analytics, and Data-Driven Insights
+              <p className="text-lg md:text-xl mb-4">
+                <PieChart size={24} className="inline-block align-text-bottom mr-2" />
+                Maximize ROI with Google Ads, Analytics, and Data-Driven Insights
               </p>
               <p className="text-gray-600 mb-6">
                 Specializing in high-performance campaigns that deliver measurable results.
@@ -148,18 +149,16 @@ export default function Home() {
             ><Award size={36} /> Success Stories & Impact</h2>
             <div className={styles.successGrid}>
               <div className={styles.successItem}>
-                <TrendingUp size={30} />
-                <h3>30% Reduction in CPA</h3>
+                <h3 className='inline'>
+                  <TrendingUp size={30} /> 30% Reduction in CPA</h3>
                 <p>Implemented advanced conversion tracking to optimize campaigns, significantly lowering acquisition costs.</p>
               </div>
               <div className={styles.successItem}>
-                <BarChart size={30} />
-                <h3>Boosted Conversion Rates</h3>
+                <h3 className='inline'><BarChart size={30} /> Boosted Conversion Rates</h3>
                 <p>Refined Google Ads strategies that directly contributed to measurable increases in conversions.</p>
               </div>
               <div className={styles.successItem}>
-                <Users size={30} />
-                <h3>Client Testimonial</h3>
+                <h3 className='inline'><Users size={30} /> Client Testimonial</h3>
                 <p>&quot;Abdul Samad&apos;s expertise in PPC and analytics transformed our digital strategy, delivering exceptional results.&quot; – <a href='https://fullstacktics.com' target='_blank' className='underline'>Fullstacktics</a></p>
               </div>
             </div>
