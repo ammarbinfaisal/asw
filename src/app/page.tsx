@@ -41,7 +41,7 @@ export default function Home() {
                   <Target size={48} /> Drive
                 </div>
                 <div className="flex items-center">
-                  <span className="bg-gradient-to-r from-cyan-600 to-teal-600 text-transparent bg-clip-text">Business Growth</span>
+                  <span className="text-[hsl(var(--primary))]">Business Growth</span>
                 </div>
                 <div className="flex items-center">
                   with Expert PPC Strategies
@@ -51,12 +51,12 @@ export default function Home() {
                 <PieChart size={24} className="inline-block align-text-bottom mr-2" />
                 Maximize ROI with Google Ads, Analytics, and Data-Driven Insights
               </p>
-              <p className="text-gray-600 mb-6">
+              <p className="text-[hsl(var(--muted-foreground))] mb-6">
                 Specializing in high-performance campaigns that deliver measurable results.
               </p>
               <Link
                 href="#contact"
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-600 to-teal-600 text-white px-6 py-3 rounded-md font-bold hover:opacity-90 transition-opacity"
+                className="inline-flex items-center gap-2 bg-[hsl(var(--accent))] text-[hsl(var(--accent-foreground))] px-6 py-3 rounded-md font-bold shadow-[var(--shadow-cta)] hover:bg-[hsl(var(--accent-hover))] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2 transition-colors"
               >
                 <Rocket size={18} /> Get a Free Consultation
               </Link>
@@ -76,7 +76,7 @@ export default function Home() {
                   <p className="font-bold">Google Tag Manager</p>
                 </div>
                 <div className="flex flex-col items-center justify-center">
-                  <Image src="/growth.png" alt="Google Tag Manager" width={50} height={50} />
+                  <Image src="/growth.png" alt="30% reduction in CPA" width={50} height={50} />
                   <p className="font-bold"><strong className={`${styles.stat} font-bold`}>30%</strong> Reduction in CPA</p>
                 </div>
                 <div className="flex flex-col items-center justify-center">
@@ -95,7 +95,7 @@ export default function Home() {
               className='font-bold'
             ><Users size={36} /> About Abdul Samad Wani</h2>
             <p>I’m a seasoned PPC and growth strategy expert with a passion for driving measurable business success. With extensive experience in Google Ads, performance marketing, and data analysis, I craft strategies that maximize ROI and fuel sustainable growth. My commitment to continuous learning—backed by certifications in Google Ads and Analytics—ensures I stay ahead of industry trends.</p>
-            <Link href="#contact" className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-600 to-teal-600 text-white px-6 py-3 rounded-md font-bold hover:opacity-90 transition-opacity">
+            <Link href="#contact" className="inline-flex items-center gap-2 border border-[hsl(var(--primary))] text-[hsl(var(--primary))] px-6 py-3 rounded-md font-bold hover:bg-[hsl(var(--primary)/0.08)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2 transition-colors">
               <Zap size={18} /> Let’s Connect
             </Link>
           </div>
@@ -126,7 +126,7 @@ export default function Home() {
                 <p>Combining creative content and technical expertise to drive traffic and revenue.</p>
               </div>
             </div>
-            <Link href="#contact" className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-600 to-teal-600 text-white px-6 py-3 rounded-md font-bold hover:opacity-90 transition-opacity">
+            <Link href="#contact" className="inline-flex items-center gap-2 border border-[hsl(var(--primary))] text-[hsl(var(--primary))] px-6 py-3 rounded-md font-bold hover:bg-[hsl(var(--primary)/0.08)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2 transition-colors">
               <Zap size={18} /> Let’s Optimize Your Campaigns
             </Link>
           </div>
@@ -164,7 +164,7 @@ export default function Home() {
               className='font-bold'
             ><Rocket size={36} /> Ready to Elevate Your Digital Marketing?</h2>
             <p>Let’s leverage my expertise in PPC, analytics, and growth strategies to achieve remarkable results for your business.</p>
-            <Link href="#contact" className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-600 to-teal-600 text-white px-6 py-3 rounded-md font-bold hover:opacity-90 transition-opacity">
+            <Link href="#contact" className="inline-flex items-center gap-2 bg-[hsl(var(--accent))] text-[hsl(var(--accent-foreground))] px-6 py-3 rounded-md font-bold shadow-[var(--shadow-cta)] hover:bg-[hsl(var(--accent-hover))] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2 transition-colors">
               <Zap size={18} /> Get Started Today
             </Link>
           </div>
