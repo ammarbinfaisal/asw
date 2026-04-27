@@ -1,7 +1,6 @@
 .wrapper {
-    font-family: 'Inter', Arial, sans-serif;
-    color: #000;
-    line-height: 1.6;
+    color: hsl(0 0% 9%);
+    line-height: var(--leading-relaxed);
     z-index: 1;
 }
 

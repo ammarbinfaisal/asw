@@ -8,16 +8,15 @@
   }
 }
 
-.bebas-neue-regular {
-  font-family: "Bebas Neue", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-
-
 @layer base {
   :root {
+    --leading-tight: 1.05;
+    --leading-snug: 1.15;
+    --leading-normal: 1.5;
+    --leading-relaxed: 1.6;
+    --tracking-tight: -0.02em;
+    --tracking-wide: 0.08em;
+
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
     --card: 0 0% 100%;

@@ -1,13 +1,22 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Montserrat } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import Script from "next/script";
 
-const font = Montserrat({
+const inter = Inter({
   display: "swap",
-  weight: ["400"],
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
-})
+  variable: "--font-sans",
+});
+
+const mono = JetBrains_Mono({
+  display: "swap",
+  weight: ["500", "700"],
+  subsets: ["latin"],
+  variable: "--font-mono",
+});
+
 export const metadata: Metadata = {
   title: "Abdul Samad Wani - Google Ads Specialist",
   description: "Google Ads Specialist based in India, working worldwide. I help businesses grow with Google Ads.",
@@ -19,9 +28,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${inter.variable} ${mono.variable}`}>
       <body
-        className={`text-white min-h-screen ${font.className}`}
+        className="font-sans text-neutral-900 min-h-screen antialiased"
       >
         <Script
           id="gtm"
