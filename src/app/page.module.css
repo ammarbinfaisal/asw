@@ -32,11 +32,12 @@
 }
 
 .logo {
-    font-size: 20px; /* Slightly smaller base size */
-    font-weight: bold;
+    font-size: 1.125rem;
+    font-weight: 600;
+    letter-spacing: 0.08em; /* slight tracking — uppercase needs it */
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 0.5rem;
 }
 
 .nav {
@@ -76,27 +77,30 @@
 }
 
 .hero h1 {
-    font-size: 36px; /* Smaller base size */
-    margin-bottom: 15px;
+    font-size: 3.157rem; /* scale: 3xl */
+    line-height: var(--leading-tight);
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 8px;
+    gap: 0.5rem;
 }
 
 .hero p {
-    font-size: 18px; /* Smaller base size */
-    margin-bottom: 20px;
+    font-size: 1.333rem; /* scale: lg */
+    line-height: var(--leading-normal);
+    margin-bottom: 1.25rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 6px;
+    gap: 0.375rem;
 }
 
 .hero .subtext {
-    font-size: 14px;
+    font-size: 0.875rem; /* scale: sm */
     color: #555;
-    margin-bottom: 25px;
+    margin-bottom: 1.5rem;
 }
 
 .cta {
@@ -141,8 +145,8 @@
 }
 
 .trustItem p {
-    margin-top: 8px;
-    font-size: 14px; /* Smaller base size */
+    margin-top: 0.5rem;
+    font-size: 0.875rem; /* scale: sm */
 }
 
 /* About Section */
@@ -152,18 +156,20 @@
 }
 
 .about h2 {
-    font-size: 30px; /* Smaller base size */
-    margin-bottom: 15px;
+    font-size: 2.369rem; /* scale: 2xl */
+    line-height: var(--leading-snug);
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 8px;
+    gap: 0.5rem;
 }
 
 .about p {
-    font-size: 16px; /* Smaller base size */
-    max-width: 700px;
-    margin: 0 auto 25px;
+    font-size: 1rem;
+    max-width: 65ch;
+    margin: 0 auto 1.5rem;
     color: #333;
 }
 
@@ -174,17 +180,19 @@
 }
 
 .services h2 {
-    font-size: 30px;
-    margin-bottom: 15px;
+    font-size: 2.369rem; /* scale: 2xl */
+    line-height: var(--leading-snug);
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 8px;
+    gap: 0.5rem;
 }
 
 .services p {
-    font-size: 16px;
-    margin-bottom: 30px;
+    font-size: 1rem;
+    margin-bottom: 2rem;
     color: #555;
 }
 
@@ -208,16 +216,17 @@
 }
 
 .serviceItem h3, .successItem h3 {
-    font-size: 20px; /* Smaller base size */
-    margin-bottom: 8px;
+    font-size: 1.333rem; /* scale: lg */
+    line-height: var(--leading-snug);
+    margin-bottom: 0.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;
+    gap: 0.375rem;
 }
 
 .serviceItem p {
-    font-size: 14px; /* Smaller base size */
+    font-size: 0.875rem; /* scale: sm */
     margin-bottom: 0;
 }
 
@@ -228,12 +237,14 @@
 }
 
 .success h2 {
-    font-size: 30px;
-    margin-bottom: 30px;
+    font-size: 2.369rem; /* scale: 2xl */
+    line-height: var(--leading-snug);
+    letter-spacing: -0.02em;
+    margin-bottom: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 8px;
+    gap: 0.5rem;
 }
 
 .successGrid {
@@ -257,19 +268,20 @@
 }
 
 .successItem h3 {
-    font-size: 18px; /* Smaller base size */
-    margin-bottom: 8px;
+    font-size: 1.333rem; /* scale: lg */
+    line-height: var(--leading-snug);
+    margin-bottom: 0.5rem;
 }
 
 .successItem p {
-    font-size: 14px;
+    font-size: 0.875rem; /* scale: sm */
     color: #333;
 }
 
 .note {
-    font-size: 12px; /* Smaller base size */
+    font-size: 0.75rem; /* scale: xs */
     color: #777;
-    margin-top: 15px;
+    margin-top: 1rem;
 }
 
 /* CTA Section */
@@ -279,17 +291,19 @@
 }
 
 .ctaSection h2 {
-    font-size: 30px;
-    margin-bottom: 15px;
+    font-size: 2.369rem; /* scale: 2xl */
+    line-height: var(--leading-snug);
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 8px;
+    gap: 0.5rem;
 }
 
 .ctaSection p {
-    font-size: 16px;
-    margin-bottom: 25px;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
     color: #555;
 }
 
@@ -315,12 +329,12 @@
 }
 
 .footer p, .footer p > a {
-    margin: 6px 0; /* Reduced margin */
+    margin: 0.375rem 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 6px;
-    font-size: 14px; /* Smaller base size */
+    gap: 0.375rem;
+    font-size: 0.875rem; /* scale: sm */
 }
 
 /* bg clip */
@@ -330,8 +344,10 @@
     -webkit-text-fill-color: transparent;
 }
 
-h2 .logo {
-    font-size: xx-large;
+/* Numeric stat callouts — JetBrains Mono for tabular figures */
+.stat {
+    font-family: var(--font-mono), ui-monospace, monospace;
+    font-feature-settings: "tnum";
 }
 
 /* Responsive Design */
@@ -341,11 +357,11 @@ h2 .logo {
     }
 
     .hero h1 {
-        font-size: 32px;
+        font-size: 2.369rem; /* step down: 3xl → 2xl */
     }
 
     .hero p {
-        font-size: 16px;
+        font-size: 1rem;
     }
 
     .trustItem {
@@ -353,7 +369,7 @@ h2 .logo {
     }
 
     .about h2, .services h2, .success h2, .ctaSection h2 {
-        font-size: 28px;
+        font-size: 1.777rem; /* step down: 2xl → xl */
     }
 }
 
@@ -371,24 +387,24 @@ h2 .logo {
     }
 
     .nav li {
-        margin: 8px 12px; /* Adjusted spacing */
+        margin: 8px 12px;
     }
 
     .hero {
         padding: 60px 0;
-        margin-top: 80px; /* Adjusted for header height */
+        margin-top: 80px;
     }
 
     .hero h1 {
-        font-size: 28px;
+        font-size: 1.777rem; /* step down: xl */
     }
 
     .hero p {
-        font-size: 14px;
+        font-size: 0.875rem;
     }
 
     .hero .subtext {
-        font-size: 12px;
+        font-size: 0.75rem;
     }
 
     .cta {
@@ -409,11 +425,11 @@ h2 .logo {
     }
 
     .about h2, .services h2, .success h2, .ctaSection h2 {
-        font-size: 24px;
+        font-size: 1.5rem;
     }
 
     .about p, .services p, .ctaSection p {
-        font-size: 14px;
+        font-size: 0.875rem;
     }
 
     .serviceGrid, .successGrid {
@@ -428,7 +444,7 @@ h2 .logo {
 
 @media (max-width: 480px) {
     .logo {
-        font-size: 18px;
+        font-size: 1rem;
     }
 
     .nav li {
@@ -440,23 +456,23 @@ h2 .logo {
     }
 
     .hero h1 {
-        font-size: 24px;
-        flex-direction: column; /* Stack icon and text */
+        font-size: 1.5rem;
+        flex-direction: column;
         gap: 5px;
     }
 
     .hero p {
-        font-size: 12px;
+        font-size: 0.75rem;
         flex-direction: column;
     }
 
     .hero .subtext {
-        font-size: 11px;
+        font-size: 0.6875rem;
     }
 
     .cta {
         padding: 6px 15px;
-        font-size: 14px;
+        font-size: 0.875rem;
     }
 
     .trustItem svg {
@@ -465,37 +481,22 @@ h2 .logo {
     }
 
     .trustItem p {
-        font-size: 12px;
+        font-size: 0.75rem;
     }
 
     .about h2, .services h2, .success h2, .ctaSection h2 {
-        font-size: 20px;
+        font-size: 1.333rem;
     }
 
     .serviceItem h3, .successItem h3 {
-        font-size: 16px;
+        font-size: 1rem;
     }
 
     .serviceItem p, .successItem p, .footer p {
-        font-size: 12px;
+        font-size: 0.75rem;
     }
 
     .footer {
         padding: 15px 0;
-    }
-}
-
-@media (max-width: 320px) {
-    .container {
-        padding: 0 8px;
-    }
-
-    .hero h1 {
-        font-size: 20px;
-    }
-
-    .cta {
-        padding: 5px 12px;
-        font-size: 12px;
     }
 }

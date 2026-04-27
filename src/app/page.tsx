@@ -23,11 +23,9 @@ export default function Home() {
         {/* Header */}
         <header className={styles.header}>
           <div className={styles.container}>
-            <div className={`${styles.logo} uppercase bold`}>
+            <div className={`${styles.logo} uppercase`}>
               <Rocket size={24} />
-              <span className="bg-gradient-to-r from-cyan-600 to-teal-600 text-transparent bg-clip-text">
-                Abdul Samad Wani
-              </span>
+              <span>Abdul Samad Wani</span>
             </div>
             <Navigation />
           </div>
@@ -79,7 +77,7 @@ export default function Home() {
                 </div>
                 <div className="flex flex-col items-center justify-center">
                   <Image src="/growth.png" alt="Google Tag Manager" width={50} height={50} />
-                  <p className="font-bold"><strong>30%</strong> Reduction in CPA</p>
+                  <p className="font-bold"><strong className={`${styles.stat} font-bold`}>30%</strong> Reduction in CPA</p>
                 </div>
                 <div className="flex flex-col items-center justify-center">
                   <Image src="/google-analytics.svg" alt="Google Analytics" width={50} height={50} />
@@ -143,7 +141,7 @@ export default function Home() {
             <div className={styles.successGrid}>
               <div className={styles.successItem}>
                 <h3 className='inline'>
-                  <TrendingUp size={30} /> 30% Reduction in CPA</h3>
+                  <TrendingUp size={30} /> <span className={styles.stat}>30%</span> Reduction in CPA</h3>
                 <p>Implemented advanced conversion tracking to optimize campaigns, significantly lowering acquisition costs.</p>
               </div>
               <div className={styles.successItem}>
