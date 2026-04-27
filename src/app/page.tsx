@@ -150,7 +150,7 @@ export default function Home() {
               </div>
               <div className={styles.successItem}>
                 <h3 className='inline'><Users size={30} /> Client Testimonial</h3>
-                <p>“Abdul Samad’s expertise in PPC and analytics transformed our digital strategy, delivering exceptional results.” — <a href='https://fullstacktics.com' target='_blank' className='underline'>Fullstacktics</a></p>
+                <p>“Abdul Samad’s expertise in PPC and analytics transformed our digital strategy, delivering exceptional results.” — <a href='https://fullstacktics.com' target='_blank' className='underline underline-offset-2 text-[hsl(var(--primary))] hover:text-[hsl(var(--primary-hover))] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2 rounded-sm'>Fullstacktics</a></p>
               </div>
             </div>
             <p className={styles.note}>Detailed case studies available upon request.</p>

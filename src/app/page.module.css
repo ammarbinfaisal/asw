@@ -5,9 +5,9 @@
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 80rem; /* aligned with Tailwind max-w-7xl in JSX */
     margin: 0 auto;
-    padding: 0 15px; /* Reduced padding for smaller screens */
+    padding: 0 1rem;
 }
 
 /* Header */
@@ -56,9 +56,12 @@
     text-decoration: none;
     color: hsl(var(--foreground));
     font-weight: 600;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 6px;
+    min-height: 44px;
+    padding: 0.25rem 0.25rem;
+    border-radius: 4px;
     transition: color 0.3s ease;
 }
 
@@ -68,17 +71,20 @@
     text-underline-offset: 4px;
 }
 
-/* Hero Section */
+.nav a:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 4px;
+}
+
+/* Hero Section — flex-centered by JSX wrapper; no height/margin overrides */
 .hero {
     color: hsl(var(--foreground));
     text-align: center;
-    padding: 80px 0;
-    margin-top: 40vh;
-    height: 70vh;
+    padding: clamp(3rem, 8vh, 6rem) 0;
 }
 
 .hero h1 {
-    font-size: 3.157rem; /* scale: 3xl */
+    font-size: clamp(1.5rem, 4vw + 1rem, 3.157rem);
     line-height: var(--leading-tight);
     letter-spacing: -0.02em;
     margin-bottom: 1rem;
@@ -89,7 +95,7 @@
 }
 
 .hero p {
-    font-size: 1.333rem; /* scale: lg */
+    font-size: clamp(0.875rem, 0.5vw + 0.8rem, 1.333rem);
     line-height: var(--leading-normal);
     margin-bottom: 1.25rem;
     display: flex;
@@ -111,15 +117,25 @@
     background: hsl(var(--accent));
     color: hsl(var(--accent-foreground));
     padding: 10px 25px;
+    min-height: 44px;
     text-decoration: none;
     border-radius: var(--radius);
     font-weight: 700;
     box-shadow: var(--shadow-cta);
-    transition: background 0.2s ease;
+    transition: background 0.2s ease, transform 0.1s ease;
 }
 
 .cta:hover {
     background: hsl(var(--accent-hover));
+}
+
+.cta:active {
+    transform: translateY(1px);
+}
+
+.cta:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
 }
 
 /* Trust Signals */
@@ -158,7 +174,7 @@
 }
 
 .about h2 {
-    font-size: 2.369rem; /* scale: 2xl */
+    font-size: clamp(1.333rem, 2.5vw + 0.75rem, 2.369rem);
     line-height: var(--leading-snug);
     letter-spacing: -0.02em;
     margin-bottom: 1rem;
@@ -182,7 +198,7 @@
 }
 
 .services h2 {
-    font-size: 2.369rem; /* scale: 2xl */
+    font-size: clamp(1.333rem, 2.5vw + 0.75rem, 2.369rem);
     line-height: var(--leading-snug);
     letter-spacing: -0.02em;
     margin-bottom: 1rem;
@@ -220,7 +236,7 @@
 }
 
 .serviceItem h3, .successItem h3 {
-    font-size: 1.333rem; /* scale: lg */
+    font-size: clamp(1rem, 1vw + 0.75rem, 1.333rem);
     line-height: var(--leading-snug);
     margin-bottom: 0.5rem;
     display: flex;
@@ -241,7 +257,7 @@
 }
 
 .success h2 {
-    font-size: 2.369rem; /* scale: 2xl */
+    font-size: clamp(1.333rem, 2.5vw + 0.75rem, 2.369rem);
     line-height: var(--leading-snug);
     letter-spacing: -0.02em;
     margin-bottom: 2rem;
@@ -274,7 +290,6 @@
 }
 
 .successItem h3 {
-    font-size: 1.333rem; /* scale: lg */
     line-height: var(--leading-snug);
     margin-bottom: 0.5rem;
 }
@@ -297,7 +312,7 @@
 }
 
 .ctaSection h2 {
-    font-size: 2.369rem; /* scale: 2xl */
+    font-size: clamp(1.333rem, 2.5vw + 0.75rem, 2.369rem);
     line-height: var(--leading-snug);
     letter-spacing: -0.02em;
     margin-bottom: 1rem;
@@ -325,6 +340,8 @@
 .footer a {
     color: hsl(var(--primary));
     text-decoration: none;
+    padding: 0.5rem 0.25rem;
+    border-radius: 4px;
     transition: color 0.3s ease;
 }
 
@@ -332,6 +349,11 @@
     color: hsl(var(--primary-hover));
     text-decoration: underline;
     text-underline-offset: 4px;
+}
+
+.footer a:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
 }
 
 .footer p, .footer p > a {
@@ -350,29 +372,37 @@
     color: hsl(var(--primary));
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-    .container {
-        padding: 0 10px;
+/* Scroll-driven entry animations (progressive enhancement) */
+@supports (animation-timeline: view()) {
+    .about,
+    .services,
+    .success,
+    .ctaSection {
+        animation: section-in linear both;
+        animation-timeline: view();
+        animation-range: entry 0% cover 25%;
     }
 
-    .hero h1 {
-        font-size: 2.369rem; /* step down: 3xl → 2xl */
+    .serviceGrid > *,
+    .successGrid > * {
+        animation: section-in linear both;
+        animation-timeline: view();
+        animation-range: entry 0% cover 30%;
     }
 
-    .hero p {
-        font-size: 1rem;
-    }
-
-    .trustItem {
-        min-width: 100px;
-    }
-
-    .about h2, .services h2, .success h2, .ctaSection h2 {
-        font-size: 1.777rem; /* step down: 2xl → xl */
+    @keyframes section-in {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 }
 
+/* Responsive — structural overrides only; type sizes use clamp() above */
 @media (max-width: 768px) {
     .header .container {
         flex-direction: column;
@@ -381,34 +411,13 @@
     }
 
     .nav {
-        margin-top: 15px;
+        margin-top: 0.5rem;
         flex-wrap: wrap;
         justify-content: center;
     }
 
     .nav li {
-        margin: 8px 12px;
-    }
-
-    .hero {
-        padding: 60px 0;
-        margin-top: 80px;
-    }
-
-    .hero h1 {
-        font-size: 1.777rem; /* step down: xl */
-    }
-
-    .hero p {
-        font-size: 0.875rem;
-    }
-
-    .hero .subtext {
-        font-size: 0.75rem;
-    }
-
-    .cta {
-        padding: 8px 20px;
+        margin: 4px 12px;
     }
 
     .trust .container {
@@ -424,79 +433,24 @@
         padding: 40px 0;
     }
 
-    .about h2, .services h2, .success h2, .ctaSection h2 {
-        font-size: 1.5rem;
-    }
-
-    .about p, .services p, .ctaSection p {
-        font-size: 0.875rem;
-    }
-
     .serviceGrid, .successGrid {
         grid-template-columns: 1fr;
         gap: 15px;
     }
-
-    .serviceItem, .successItem {
-        padding: 12px;
-    }
 }
 
 @media (max-width: 480px) {
-    .logo {
-        font-size: 1rem;
-    }
-
-    .nav li {
-        margin: 6px 10px;
-    }
-
-    .hero {
-        padding: 40px 0;
-    }
-
     .hero h1 {
-        font-size: 1.5rem;
         flex-direction: column;
-        gap: 5px;
+        gap: 0.25rem;
     }
 
     .hero p {
-        font-size: 0.75rem;
         flex-direction: column;
-    }
-
-    .hero .subtext {
-        font-size: 0.6875rem;
-    }
-
-    .cta {
-        padding: 6px 15px;
-        font-size: 0.875rem;
     }
 
     .trustItem svg {
         width: 30px;
         height: 30px;
-    }
-
-    .trustItem p {
-        font-size: 0.75rem;
-    }
-
-    .about h2, .services h2, .success h2, .ctaSection h2 {
-        font-size: 1.333rem;
-    }
-
-    .serviceItem h3, .successItem h3 {
-        font-size: 1rem;
-    }
-
-    .serviceItem p, .successItem p, .footer p {
-        font-size: 0.75rem;
-    }
-
-    .footer {
-        padding: 15px 0;
     }
 }
