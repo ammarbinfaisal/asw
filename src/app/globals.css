@@ -2,115 +2,150 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+:root {
+  --neutral-1: #fdfcfc;
+  --neutral-2: #faf8f8;
+  --neutral-3: #f3f0ee;
+  --neutral-4: #ebe7e5;
+  --neutral-5: #e3dcda;
+  --neutral-6: #d8d0cd;
+  --neutral-7: #cbc1bd;
+  --neutral-8: #b3a8a4;
+  --neutral-9: #a69893;
+  --neutral-10: #938681;
+  --neutral-11: #69615e;
+  --neutral-12: #312d2b;
+  --accent-1: #fffcfb;
+  --accent-2: #fff7f4;
+  --accent-3: #fdece6;
+  --accent-4: #fae2d9;
+  --accent-5: #f7d6c9;
+  --accent-6: #f1c8b8;
+  --accent-7: #e8b7a4;
+  --accent-8: #d59b85;
+  --accent-9: #cd886d;
+  --accent-10: #b7775e;
+  --accent-11: #7f594a;
+  --accent-12: #3c2821;
+  --accent-on-solid: #150a07;
+  --error-3: #ffebe9;
+  --error-9: #c56c65;
+  --error-11: #86534f;
+  --success-3: #e6f6e6;
+  --success-9: #84cc86;
+  --success-11: #486e49;
+  --warning-3: #f6f0e4;
+  --warning-9: #ceb47e;
+  --warning-11: #6f6144;
+  --info-3: #e7f2fa;
+  --info-9: #7aabce;
+  --info-11: #4c677a;
+
+  --background: var(--neutral-1);
+  --surface: var(--neutral-2);
+  --surface-hover: var(--neutral-3);
+  --surface-active: var(--neutral-4);
+  --border-subtle: var(--neutral-6);
+  --border: var(--neutral-7);
+  --border-strong: var(--neutral-8);
+  --text-secondary: var(--neutral-11);
+  --text: var(--neutral-12);
+  --accent-bg-subtle: var(--accent-3);
+  --accent-solid: var(--accent-9);
+  --accent-solid-hover: var(--accent-10);
+  --accent-text: var(--accent-11);
+
+  --page: var(--neutral-2);
+  --paper: var(--neutral-1);
+  --paper-raised: var(--neutral-3);
+  --ink: var(--neutral-12);
+  --ink-muted: var(--neutral-11);
+  --rule: var(--neutral-7);
+  --rule-soft: var(--neutral-6);
+  --rule-strong: var(--neutral-8);
+  --copper: var(--accent-9);
+  --copper-hover: var(--accent-10);
+  --copper-dark: var(--accent-11);
+  --copper-soft: var(--accent-3);
+  --on-copper: var(--accent-on-solid);
+  --focus: var(--accent-11);
+  --footer: var(--neutral-12);
+  --footer-text: var(--neutral-2);
+  --footer-muted: var(--neutral-8);
+
+  --font-display: Georgia, "Times New Roman", serif;
+  --font-body: Arial, Helvetica, sans-serif;
+  --shell: 76rem;
+  --reading: 68ch;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 7rem;
+}
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--copper);
+  color: var(--on-copper);
+}
+
+a {
+  color: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: var(--copper-soft);
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 4px;
+}
+
+.skip-link {
+  position: fixed;
+  inset-block-start: 0.75rem;
+  inset-inline-start: 0.75rem;
+  z-index: 100;
+  padding: 0.65rem 1rem;
+  background: var(--footer);
+  color: var(--footer-text);
+  font-weight: 700;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   *,
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-@layer base {
-  :root {
-    --leading-tight: 1.05;
-    --leading-snug: 1.15;
-    --leading-normal: 1.5;
-    --leading-relaxed: 1.6;
-    --tracking-tight: -0.02em;
-    --tracking-wide: 0.08em;
-
-    /* Brand neutrals — hue-shifted toward indigo (240°) so grays belong
-       to the same family as the aurora background. */
-    --ink-950: 240 25% 8%;
-    --ink-800: 240 18% 20%;
-    --ink-600: 240 12% 38%;
-    --ink-400: 240 10% 60%;
-    --ink-200: 240 15% 88%;
-    --ink-100: 240 20% 96%;
-    --ink-50:  240 25% 98%;
-
-    /* shadcn-compat tokens */
-    --background: var(--ink-50);
-    --foreground: var(--ink-950);
-    --card: 0 0% 100%;
-    --card-foreground: var(--ink-950);
-    --popover: 0 0% 100%;
-    --popover-foreground: var(--ink-950);
-
-    /* Brand primary — indigo, locked to aurora hue */
-    --primary: 245 60% 50%;
-    --primary-foreground: 0 0% 100%;
-    --primary-hover: 245 65% 42%;
-
-    /* Accent — amber complement; reserved for primary CTAs only.
-       Dark text on amber: white-on-amber fails AA (~3:1). */
-    --accent: 38 92% 52%;
-    --accent-foreground: 38 50% 10%;
-    --accent-hover: 38 95% 60%;
-
-    --secondary: var(--ink-100);
-    --secondary-foreground: var(--ink-950);
-    --muted: var(--ink-100);
-    --muted-foreground: var(--ink-600);
-
-    /* Functional */
-    --destructive: 355 75% 48%;
-    --destructive-foreground: 0 0% 100%;
-    --success: 155 65% 38%;
-    --warning: 35 95% 50%;
-
-    --border: var(--ink-200);
-    --input: var(--ink-200);
-    --ring: var(--primary);
-
-    --chart-1: 245 60% 50%;
-    --chart-2: 220 80% 60%;
-    --chart-3: 280 65% 60%;
-    --chart-4: 38 92% 52%;
-    --chart-5: 155 65% 45%;
-    --radius: 0.5rem;
-
-    /* Hue-shifted shadows — pure black looks "stuck on" against
-       chromatic surfaces; shifted toward brand for cohesion. */
-    --shadow-sm:  0 1px 2px hsl(245 30% 15% / 0.06);
-    --shadow-md:  0 4px 12px hsl(245 30% 15% / 0.08);
-    --shadow-lg:  0 12px 32px hsl(245 30% 20% / 0.12);
-    --shadow-cta: 0 8px 24px hsl(38 80% 40% / 0.25);
-  }
-  .dark {
-    --background: 240 25% 6%;
-    --foreground: 240 15% 96%;
-    --card: 240 25% 9%;
-    --card-foreground: 240 15% 96%;
-    --popover: 240 25% 9%;
-    --popover-foreground: 240 15% 96%;
-    --primary: 245 70% 65%;
-    --primary-foreground: 240 25% 8%;
-    --secondary: 240 18% 18%;
-    --secondary-foreground: 240 15% 96%;
-    --muted: 240 18% 14%;
-    --muted-foreground: 240 10% 70%;
-    --accent: 38 92% 60%;
-    --accent-foreground: 38 50% 10%;
-    --destructive: 355 70% 55%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 240 18% 18%;
-    --input: 240 18% 18%;
-    --ring: 245 70% 65%;
-    --chart-1: 245 70% 65%;
-    --chart-2: 220 80% 70%;
-    --chart-3: 280 65% 70%;
-    --chart-4: 38 92% 60%;
-    --chart-5: 155 60% 55%;
   }
 }
 
