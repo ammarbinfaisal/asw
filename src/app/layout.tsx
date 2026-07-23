@@ -1,25 +1,19 @@
 import type { Metadata } from "next";
-import "./globals.css";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import Script from "next/script";
+import "./globals.css";
 
-const inter = Inter({
+const bebas = localFont({
+  src: "./BebasNeue.ttf",
   display: "swap",
-  weight: ["400", "500", "600", "700"],
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
-
-const mono = JetBrains_Mono({
-  display: "swap",
-  weight: ["500", "700"],
-  subsets: ["latin"],
-  variable: "--font-mono",
+  weight: "400",
+  variable: "--font-bebas",
 });
 
 export const metadata: Metadata = {
-  title: "Abdul Samad Wani - Google Ads Specialist",
-  description: "Google Ads Specialist based in India, working worldwide. I help businesses grow with Google Ads.",
+  title: "Abdul Samad Wani | Google Ads & PPC Growth Strategy",
+  description:
+    "Google Ads specialist based in India, working worldwide. PPC strategy, analytics, tracking, and measurable growth.",
 };
 
 export default function RootLayout({
@@ -28,10 +22,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${mono.variable}`}>
-      <body
-        className="font-sans text-neutral-900 min-h-screen antialiased"
-      >
+    <html lang="en" className={bebas.variable}>
+      <body>
         <Script
           id="gtm"
           strategy="beforeInteractive"

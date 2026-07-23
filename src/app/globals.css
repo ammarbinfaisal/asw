@@ -2,115 +2,192 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+:root {
+  --neutral-1: #fdfcfc;
+  --neutral-2: #faf8f8;
+  --neutral-3: #f3efef;
+  --neutral-4: #ece6e5;
+  --neutral-5: #e3dcdb;
+  --neutral-6: #d9d0ce;
+  --neutral-7: #cbc1be;
+  --neutral-8: #b4a8a5;
+  --neutral-9: #9a8b88;
+  --neutral-10: #877a77;
+  --neutral-11: #69615f;
+  --neutral-12: #312d2c;
+  --accent-1: #fffcfb;
+  --accent-2: #fff7f5;
+  --accent-3: #ffece7;
+  --accent-4: #ffe0d9;
+  --accent-5: #ffd2c8;
+  --accent-6: #ffc1b3;
+  --accent-7: #ffab98;
+  --accent-8: #f48871;
+  --accent-9: #e26147;
+  --accent-10: #c95239;
+  --accent-11: #934c3c;
+  --accent-12: #47221a;
+  --accent-on-solid: #150a08;
+  --cyan-3: #e1f5f9;
+  --cyan-9: #60c8de;
+  --cyan-11: #366c78;
+  --cyan-on-solid: #040f12;
+  --error-3: #ffebe9;
+  --error-9: #e1524f;
+  --error-11: #974843;
+  --success-3: #e0f8e0;
+  --success-9: #5ad664;
+  --success-11: #337437;
+  --warning-3: #f9f0dd;
+  --warning-9: #dbb155;
+  --warning-11: #76602f;
+  --info-3: #e3f3ff;
+  --info-9: #5baee5;
+  --info-11: #3d6886;
+
+  --background: var(--neutral-1);
+  --surface: var(--neutral-2);
+  --surface-hover: var(--neutral-3);
+  --surface-active: var(--neutral-4);
+  --border-subtle: var(--neutral-6);
+  --border: var(--neutral-7);
+  --border-strong: var(--neutral-8);
+  --text-secondary: var(--neutral-11);
+  --text: var(--neutral-12);
+  --accent-bg-subtle: var(--accent-3);
+  --accent-solid: var(--accent-9);
+  --accent-solid-hover: var(--accent-10);
+  --accent-text: var(--accent-11);
+
+  --paper: #f7f0df;
+  --paper-deep: #eee0c6;
+  --ink: #211e1c;
+  --ink-soft: #5d554f;
+  --line: #bdb09e;
+  --white: #fffdf8;
+
+  --font-display: var(--font-bebas), "Arial Narrow", sans-serif;
+  --font-body: "Avenir Next", "Trebuchet MS", ui-sans-serif, system-ui, sans-serif;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem);
+  --text-xl: clamp(1.5rem, 1.2rem + 1.1vw, 2.125rem);
+  --text-2xl: clamp(2.25rem, 1.65rem + 2.5vw, 4.25rem);
+  --text-hero: clamp(3.65rem, 2.2rem + 7vw, 8.75rem);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 20rem;
+  overflow-x: hidden;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--accent-9);
+  color: var(--accent-on-solid);
+}
+
+a {
+  color: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 4px;
+}
+
+.whatsapp-fab {
+  position: fixed;
+  right: max(1rem, env(safe-area-inset-right));
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  z-index: 20;
+  display: inline-flex;
+  min-width: 3.5rem;
+  min-height: 3.5rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  padding: 0.75rem;
+  border: 2px solid var(--ink);
+  background: var(--white);
+  box-shadow: 5px 5px 0 var(--ink);
+  color: var(--ink);
+  font-size: var(--text-sm);
+  font-weight: 800;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: box-shadow 160ms ease, transform 160ms ease;
+}
+
+.whatsapp-fab span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (min-width: 44rem) {
+  .whatsapp-fab {
+    padding-inline: 1rem;
+  }
+
+  .whatsapp-fab span {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+  }
+}
+
+@media (hover: hover) {
+  .whatsapp-fab:hover {
+    box-shadow: 2px 2px 0 var(--ink);
+    transform: translate(3px, 3px);
+  }
+}
+
+@media (pointer: coarse) {
+  a,
+  button {
+    min-height: 44px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   *,
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
   }
 }
-
-@layer base {
-  :root {
-    --leading-tight: 1.05;
-    --leading-snug: 1.15;
-    --leading-normal: 1.5;
-    --leading-relaxed: 1.6;
-    --tracking-tight: -0.02em;
-    --tracking-wide: 0.08em;
-
-    /* Brand neutrals — hue-shifted toward indigo (240°) so grays belong
-       to the same family as the aurora background. */
-    --ink-950: 240 25% 8%;
-    --ink-800: 240 18% 20%;
-    --ink-600: 240 12% 38%;
-    --ink-400: 240 10% 60%;
-    --ink-200: 240 15% 88%;
-    --ink-100: 240 20% 96%;
-    --ink-50:  240 25% 98%;
-
-    /* shadcn-compat tokens */
-    --background: var(--ink-50);
-    --foreground: var(--ink-950);
-    --card: 0 0% 100%;
-    --card-foreground: var(--ink-950);
-    --popover: 0 0% 100%;
-    --popover-foreground: var(--ink-950);
-
-    /* Brand primary — indigo, locked to aurora hue */
-    --primary: 245 60% 50%;
-    --primary-foreground: 0 0% 100%;
-    --primary-hover: 245 65% 42%;
-
-    /* Accent — amber complement; reserved for primary CTAs only.
-       Dark text on amber: white-on-amber fails AA (~3:1). */
-    --accent: 38 92% 52%;
-    --accent-foreground: 38 50% 10%;
-    --accent-hover: 38 95% 60%;
-
-    --secondary: var(--ink-100);
-    --secondary-foreground: var(--ink-950);
-    --muted: var(--ink-100);
-    --muted-foreground: var(--ink-600);
-
-    /* Functional */
-    --destructive: 355 75% 48%;
-    --destructive-foreground: 0 0% 100%;
-    --success: 155 65% 38%;
-    --warning: 35 95% 50%;
-
-    --border: var(--ink-200);
-    --input: var(--ink-200);
-    --ring: var(--primary);
-
-    --chart-1: 245 60% 50%;
-    --chart-2: 220 80% 60%;
-    --chart-3: 280 65% 60%;
-    --chart-4: 38 92% 52%;
-    --chart-5: 155 65% 45%;
-    --radius: 0.5rem;
-
-    /* Hue-shifted shadows — pure black looks "stuck on" against
-       chromatic surfaces; shifted toward brand for cohesion. */
-    --shadow-sm:  0 1px 2px hsl(245 30% 15% / 0.06);
-    --shadow-md:  0 4px 12px hsl(245 30% 15% / 0.08);
-    --shadow-lg:  0 12px 32px hsl(245 30% 20% / 0.12);
-    --shadow-cta: 0 8px 24px hsl(38 80% 40% / 0.25);
-  }
-  .dark {
-    --background: 240 25% 6%;
-    --foreground: 240 15% 96%;
-    --card: 240 25% 9%;
-    --card-foreground: 240 15% 96%;
-    --popover: 240 25% 9%;
-    --popover-foreground: 240 15% 96%;
-    --primary: 245 70% 65%;
-    --primary-foreground: 240 25% 8%;
-    --secondary: 240 18% 18%;
-    --secondary-foreground: 240 15% 96%;
-    --muted: 240 18% 14%;
-    --muted-foreground: 240 10% 70%;
-    --accent: 38 92% 60%;
-    --accent-foreground: 38 50% 10%;
-    --destructive: 355 70% 55%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 240 18% 18%;
-    --input: 240 18% 18%;
-    --ring: 245 70% 65%;
-    --chart-1: 245 70% 65%;
-    --chart-2: 220 80% 70%;
-    --chart-3: 280 65% 70%;
-    --chart-4: 38 92% 60%;
-    --chart-5: 155 60% 55%;
-  }
-}
-
