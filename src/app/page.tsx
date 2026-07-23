@@ -1,192 +1,100 @@
 import styles from './page.module.css';
 import Link from 'next/link';
-import {
-  Award,
-  BarChart,
-  TrendingUp,
-  Rocket,
-  Target,
-  PieChart,
-  Users,
-  Search,
-  Zap,
-  Globe,
-} from 'lucide-react';
 import Image from 'next/image';
+import { ArrowDownRight, ArrowUpRight, BarChart3, Check, TrendingUp, Users } from 'lucide-react';
 import WhatsAppButton from './WhatsAppButton';
-import Navigation from './Navigation';
+
+const services = [
+  ['01', 'Advanced PPC management', 'Campaign setup, bidding, creative testing, and focused weekly optimisation.'],
+  ['02', 'Strategic growth planning', 'A practical acquisition plan that connects paid media to the wider growth picture.'],
+  ['03', 'Data-driven optimisation', 'GTM and GA4 measurement that turns customer behaviour into useful decisions.'],
+  ['04', 'Integrated marketing', 'Advertising, content, and technical work aligned around qualified demand.'],
+];
 
 export default function Home() {
   return (
-    <>
-      <div className={styles.wrapper}>
-        {/* Header */}
-        <header className={styles.header}>
-          <div className={styles.container}>
-            <div className={`${styles.logo} uppercase`}>
-              <Rocket size={24} />
-              <span>Abdul Samad Wani</span>
-            </div>
-            <Navigation />
-          </div>
-        </header>
+    <main className={styles.page}>
+      <header className={styles.header}>
+        <Link className={styles.wordmark} href="#home" aria-label="Abdul Samad Wani home">
+          <span>ASW</span><span>Performance / 2026</span>
+        </Link>
+        <nav aria-label="Primary navigation">
+          <ul className={styles.nav}>
+            <li><Link href="#about">Profile</Link></li>
+            <li><Link href="#services">Capabilities</Link></li>
+            <li><Link href="#success">Results</Link></li>
+          </ul>
+        </nav>
+        <Link className={styles.navCta} href="#contact">Start a conversation <ArrowUpRight size={15} /></Link>
+      </header>
 
-
-        <div className="h-screen flex flex-col mt-24 md:mt-0">
-          {/* Hero Section */}
-          <section id="home" className="flex-1 flex items-center justify-center">
-            <div className="max-w-7xl mx-auto px-4 text-center">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4 flex flex-wrap items-center justify-center gap-2">
-                <div className="flex items-center gap-2">
-                  <Target size={48} /> Drive
-                </div>
-                <div className="flex items-center">
-                  <span className="text-[hsl(var(--primary))]">Business Growth</span>
-                </div>
-                <div className="flex items-center">
-                  with Expert PPC Strategies
-                </div>
-              </h1>
-              <p className="text-lg md:text-xl mb-4">
-                <PieChart size={24} className="inline-block align-text-bottom mr-2" />
-                Maximize ROI with Google Ads, Analytics, and Data-Driven Insights
-              </p>
-              <p className="text-[hsl(var(--muted-foreground))] mb-6">
-                Specializing in high-performance campaigns that deliver measurable results.
-              </p>
-              <Link
-                href="#contact"
-                className="inline-flex items-center gap-2 bg-[hsl(var(--accent))] text-[hsl(var(--accent-foreground))] px-6 py-3 rounded-md font-bold shadow-[var(--shadow-cta)] hover:bg-[hsl(var(--accent-hover))] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2 transition-colors"
-              >
-                <Rocket size={18} /> Get a Free Consultation
-              </Link>
-            </div>
-          </section>
-
-          {/* Trust Signals */}
-          <section className="py-8 flex items-center justify-center">
-            <div className="max-w-7xl mx-auto px-4">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div className="flex flex-col items-center justify-center">
-                  <Image src="/icons8-google-ads.svg" alt="Google Ads Certified" width={50} height={50} />
-                  <p className="font-bold">Google Ads Certified</p>
-                </div>
-                <div className="flex flex-col items-center justify-center">
-                  <Image src="/icons8-google-tag-manager.svg" alt="Google Tag Manager" width={50} height={50} />
-                  <p className="font-bold">Google Tag Manager</p>
-                </div>
-                <div className="flex flex-col items-center justify-center">
-                  <Image src="/growth.png" alt="30% reduction in CPA" width={50} height={50} />
-                  <p className="font-bold"><strong className={`${styles.stat} font-bold`}>30%</strong> Reduction in CPA</p>
-                </div>
-                <div className="flex flex-col items-center justify-center">
-                  <Image src="/google-analytics.svg" alt="Google Analytics" width={50} height={50} />
-                  <p className="font-bold">Google Analytics 4</p>
-                </div>
-              </div>
-            </div>
-          </section>
+      <section className={styles.hero} id="home">
+        <div className={styles.heroMeta}><span>Google Ads specialist</span><span>India / Worldwide</span></div>
+        <div className={styles.heroTitle}>
+          <p className={styles.kicker}>Performance marketing, made legible.</p>
+          <h1>Make every<br /><em>click</em> accountable.</h1>
         </div>
+        <div className={styles.heroAside}>
+          <p>I build PPC systems with a clear line from attention to action—so growth is measurable, not mysterious.</p>
+          <Link className={styles.primaryCta} href="#contact">Get a free consultation <ArrowDownRight size={18} /></Link>
+        </div>
+      </section>
 
-        {/* About Section */}
-        <section id="about" className={styles.about}>
-          <div className={styles.container}>
-            <h2
-              className='font-bold'
-            ><Users size={36} /> About Abdul Samad Wani</h2>
-            <p>I’m a seasoned PPC and growth strategy expert with a passion for driving measurable business success. With extensive experience in Google Ads, performance marketing, and data analysis, I craft strategies that maximize ROI and fuel sustainable growth. My commitment to continuous learning—backed by certifications in Google Ads and Analytics—ensures I stay ahead of industry trends.</p>
-            <Link href="#contact" className="inline-flex items-center gap-2 border border-[hsl(var(--primary))] text-[hsl(var(--primary))] px-6 py-3 rounded-md font-bold hover:bg-[hsl(var(--primary)/0.08)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2 transition-colors">
-              <Zap size={18} /> Let’s Connect
-            </Link>
-          </div>
-        </section>
+      <section className={styles.proof} aria-label="Credentials and performance signals">
+        <div className={styles.proofIntro}><span>Signal / proof</span><strong>Tools are useful only when they clarify the next decision.</strong></div>
+        <div className={styles.proofGrid}>
+          <div><Image src="/icons8-google-ads.svg" alt="" width={42} height={42} /><span>Google Ads<br />Certified</span></div>
+          <div><Image src="/icons8-google-tag-manager.svg" alt="" width={42} height={42} /><span>Google Tag<br />Manager</span></div>
+          <div className={styles.metric}><strong>30%</strong><span>reduction in CPA</span></div>
+          <div><Image src="/google-analytics.svg" alt="" width={42} height={42} /><span>Google<br />Analytics 4</span></div>
+        </div>
+      </section>
 
-        {/* Services Overview */}
-        <section id="services" className={styles.services}>
-          <div className={styles.container}>
-            <h2
-              className='font-bold'
-            ><Search size={36} /> Tailored PPC & Growth Solutions</h2>
-            <p>From campaign creation to real-time optimization, I deliver results-driven solutions tailored to your business goals.</p>
-            <div className={styles.serviceGrid}>
-              <div className={styles.serviceItem}>
-                <h3><Rocket size={22} /> Advanced PPC Management</h3>
-                <p>Comprehensive campaign strategies—from setup to optimization—that consistently deliver impressive ROI.</p>
-              </div>
-              <div className={styles.serviceItem}>
-                <h3><Target size={22} /> Strategic Growth Planning</h3>
-                <p>Custom plans integrating digital advertising and performance marketing to boost visibility and conversions.</p>
-              </div>
-              <div className={styles.serviceItem}>
-                <h3><PieChart size={22} /> Data-Driven Optimization</h3>
-                <p>Using GTM and GA4, I turn data into actionable insights for continuous campaign improvement.</p>
-              </div>
-              <div className={styles.serviceItem}>
-                <h3><Globe size={22} /> Integrated Marketing Solutions</h3>
-                <p>Combining creative content and technical expertise to drive traffic and revenue.</p>
-              </div>
-            </div>
-            <Link href="#contact" className="inline-flex items-center gap-2 border border-[hsl(var(--primary))] text-[hsl(var(--primary))] px-6 py-3 rounded-md font-bold hover:bg-[hsl(var(--primary)/0.08)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2 transition-colors">
-              <Zap size={18} /> Let’s Optimize Your Campaigns
-            </Link>
-          </div>
-        </section>
+      <section className={styles.profile} id="about">
+        <div className={styles.sectionLabel}>01 / Profile</div>
+        <div>
+          <h2>Strategy with an<br />operator&apos;s <em>eye.</em></h2>
+        </div>
+        <div className={styles.profileCopy}>
+          <p>I&apos;m Abdul Samad Wani, a PPC and growth strategy specialist. I pair campaign craft with a rigorous measurement practice—so the work compounds into sustainable, visible progress.</p>
+          <Link className={styles.textLink} href="#contact">Work together <ArrowUpRight size={18} /></Link>
+        </div>
+      </section>
 
-        {/* Success Stories */}
-        <section id="success" className={styles.success}>
-          <div className={styles.container}>
-            <h2
-              className='font-bold'
-            ><Award size={36} /> Success Stories & Impact</h2>
-            <div className={styles.successGrid}>
-              <div className={styles.successItem}>
-                <h3 className='inline'>
-                  <TrendingUp size={30} /> <span className={styles.stat}>30%</span> Reduction in CPA</h3>
-                <p>Implemented advanced conversion tracking to optimize campaigns, significantly lowering acquisition costs.</p>
-              </div>
-              <div className={styles.successItem}>
-                <h3 className='inline'><BarChart size={30} /> Boosted Conversion Rates</h3>
-                <p>Refined Google Ads strategies that directly contributed to measurable increases in conversions.</p>
-              </div>
-              <div className={styles.successItem}>
-                <h3 className='inline'><Users size={30} /> Client Testimonial</h3>
-                <p>“Abdul Samad’s expertise in PPC and analytics transformed our digital strategy, delivering exceptional results.” — <a href='https://fullstacktics.com' target='_blank' className='underline underline-offset-2 text-[hsl(var(--primary))] hover:text-[hsl(var(--primary-hover))] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2 rounded-sm'>Fullstacktics</a></p>
-              </div>
-            </div>
-            <p className={styles.note}>Detailed case studies available upon request.</p>
-          </div>
-        </section>
+      <section className={styles.services} id="services">
+        <div className={styles.servicesHeading}><span className={styles.sectionLabel}>02 / Capabilities</span><h2>A focused system<br />for paid growth.</h2></div>
+        <div className={styles.serviceList}>
+          {services.map(([number, name, copy]) => <article className={styles.service} key={number}>
+            <span>{number}</span><h3>{name}</h3><p>{copy}</p><ArrowUpRight aria-hidden size={21} />
+          </article>)}
+        </div>
+      </section>
 
-        {/* Call to Action */}
-        <section className={styles.ctaSection}>
-          <div className={styles.container}>
-            <h2
-              className='font-bold'
-            ><Rocket size={36} /> Ready to Elevate Your Digital Marketing?</h2>
-            <p>Let’s leverage my expertise in PPC, analytics, and growth strategies to achieve remarkable results for your business.</p>
-            <Link href="#contact" className="inline-flex items-center gap-2 bg-[hsl(var(--accent))] text-[hsl(var(--accent-foreground))] px-6 py-3 rounded-md font-bold shadow-[var(--shadow-cta)] hover:bg-[hsl(var(--accent-hover))] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2 transition-colors">
-              <Zap size={18} /> Get Started Today
-            </Link>
-          </div>
-        </section>
+      <section className={styles.results} id="success">
+        <div className={styles.resultsTop}><span className={styles.sectionLabel}>03 / Outcomes</span><p>Measured progress over marketing theatre.</p></div>
+        <div className={styles.resultFeature}>
+          <div className={styles.resultNumber}>30<span>%</span></div>
+          <div><h2>Lower acquisition cost through better conversion intelligence.</h2><p>Advanced conversion tracking showed where campaigns were losing momentum—then made optimisation a repeatable practice.</p></div>
+          <TrendingUp aria-hidden size={42} />
+        </div>
+        <div className={styles.resultNotes}>
+          <article><BarChart3 aria-hidden size={20} /><h3>More useful reporting</h3><p>Clear measurement turns review meetings into decision time.</p></article>
+          <article><Users aria-hidden size={20} /><h3>Client perspective</h3><p>“Abdul Samad&apos;s expertise in PPC and analytics transformed our digital strategy.” — Fullstacktics</p></article>
+          <article><Check aria-hidden size={20} /><h3>Built to iterate</h3><p>A disciplined loop of hypotheses, tests, and transparent learning.</p></article>
+        </div>
+      </section>
 
-        {/* Footer */}
-        <footer className={styles.footer}>
-          <div className={styles.container}>
-            <p><Globe size={18} /> © 2025 Abdul Samad Wani. All rights reserved.</p>
-            <p>
-              <Link href="#"><Users size={14} /> Privacy Policy</Link> |
-              <Link href="#"><Award size={14} /> Terms of Use</Link>
-            </p>
-            <p>
-              <Link href="https://linkedin.com" target="_blank"><Search size={14} /> LinkedIn</Link> |
-              <Link href="https://abdulsamadwani.com" target="_blank"><Globe size={14} /> abdulsamadwani.com</Link>
-            </p>
-          </div>
-        </footer>
-      </div >
+      <section className={styles.contact} id="contact">
+        <span className={styles.sectionLabel}>04 / Contact</span>
+        <h2>Ready to turn<br />spend into <em>signal?</em></h2>
+        <p>Bring the business question. We&apos;ll make the next move clear.</p>
+        <Link className={styles.contactCta} href="https://wa.me/919045925301">Message on WhatsApp <ArrowUpRight size={20} /></Link>
+      </section>
+
+      <footer className={styles.footer}>
+        <span>© 2026 Abdul Samad Wani</span><span>Google Ads · Analytics · Growth</span><Link href="#home">Back to top ↑</Link>
+      </footer>
       <WhatsAppButton phoneNumber="+919045925301" />
-
-    </>
+    </main>
   );
 }
