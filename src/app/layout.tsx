@@ -28,10 +28,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${mono.variable}`}>
-      <body
-        className="font-sans text-neutral-900 min-h-screen antialiased"
-      >
+    <html
+      lang="en"
+      data-theme="dark"
+      className={`${inter.variable} ${mono.variable}`}
+    >
+      <body className="min-h-screen antialiased">
         <Script
           id="gtm"
           strategy="beforeInteractive"
