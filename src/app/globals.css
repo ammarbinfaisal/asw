@@ -41,37 +41,38 @@
   --info-9: #7aabce;
   --info-11: #4c677a;
 
-  --background: var(--neutral-1);
-  --surface: var(--neutral-2);
-  --surface-hover: var(--neutral-3);
-  --surface-active: var(--neutral-4);
-  --border-subtle: var(--neutral-6);
-  --border: var(--neutral-7);
-  --border-strong: var(--neutral-8);
-  --text-secondary: var(--neutral-11);
-  --text: var(--neutral-12);
-  --accent-bg-subtle: var(--accent-3);
+  --background: #131212;
+  --surface: #1a1919;
+  --surface-hover: #242121;
+  --surface-active: #2d2928;
+  --border-subtle: #413a38;
+  --border: #4f4744;
+  --border-strong: #685e5a;
+  --text-secondary: #beb5b2;
+  --text: #ece7e5;
+  --accent-bg-subtle: #2b1f1a;
   --accent-solid: var(--accent-9);
   --accent-solid-hover: var(--accent-10);
-  --accent-text: var(--accent-11);
+  --accent-text: #d8ac9c;
 
-  --page: var(--neutral-2);
-  --paper: var(--neutral-1);
-  --paper-raised: var(--neutral-3);
-  --ink: var(--neutral-12);
-  --ink-muted: var(--neutral-11);
-  --rule: var(--neutral-7);
-  --rule-soft: var(--neutral-6);
-  --rule-strong: var(--neutral-8);
+  /* Dark editorial surface — values are the verified dark ramp from palette.mjs. */
+  --page: #1a1919;
+  --paper: #131212;
+  --paper-raised: #242121;
+  --ink: #ece7e5;
+  --ink-muted: #beb5b2;
+  --rule: #4f4744;
+  --rule-soft: #413a38;
+  --rule-strong: #685e5a;
   --copper: var(--accent-9);
   --copper-hover: var(--accent-10);
-  --copper-dark: var(--accent-11);
-  --copper-soft: var(--accent-3);
+  --copper-dark: #d8ac9c;
+  --copper-soft: #2b1f1a;
   --on-copper: var(--accent-on-solid);
-  --focus: var(--accent-11);
-  --footer: var(--neutral-12);
-  --footer-text: var(--neutral-2);
-  --footer-muted: var(--neutral-8);
+  --focus: #d8ac9c;
+  --footer: #131212;
+  --footer-text: #ece7e5;
+  --footer-muted: #b8aba6;
 
   --font-display: Georgia, "Times New Roman", serif;
   --font-body: Arial, Helvetica, sans-serif;
@@ -148,4 +149,3 @@ a {
     transition-duration: 0.01ms !important;
   }
 }
-

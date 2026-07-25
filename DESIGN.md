@@ -5,13 +5,13 @@
 **Grounding:** strategy-journal information discipline + financial-broadsheet typographic authority  
 **DNA:** Editorial Minimalism with Ruler-inflected copper · **Dominant axis:** composition  
 **Composition:** asymmetric editorial column with generous negative space and rule-based grouping  
-**Pins:** light paper ground, deep ink, muted copper/saffron accent, oversized vertical section markers
+**Pins:** dark charcoal ground, warm copper accent, oversized vertical section markers
 
 For IA and flow specification, see `JOURNEY.md`.
 
 ## Direction
 
-The page should feel like a sharp strategic memorandum: composed, legible, and confident enough to leave space around the evidence. Decoration is replaced by typographic hierarchy, hairline rules, and one recurring sectional gesture.
+The page should feel like a sharp strategic memorandum after hours: composed, legible, and confident enough to leave space around the evidence. Decoration is replaced by typographic hierarchy, warm rules on charcoal, and one recurring sectional gesture.
 
 ## Signature move
 
@@ -37,26 +37,24 @@ node scripts/palette.mjs --seed 42 --chroma muted --harmony analogous
 Implementation uses the generated ramps verbatim in `src/app/globals.css`, then aliases them to purpose-specific tokens:
 
 ```css
---page: var(--neutral-2);
---paper: var(--neutral-1);
---ink: var(--neutral-12);
---ink-muted: var(--neutral-11);
---rule: var(--neutral-7);
---rule-strong: var(--neutral-8);
+--page: #1a1919;
+--paper: #131212;
+--ink: #ece7e5;
+--ink-muted: #beb5b2;
+--rule: #4f4744;
+--rule-strong: #685e5a;
 --copper: var(--accent-9);
---copper-dark: var(--accent-11);
---copper-soft: var(--accent-3);
+--copper-dark: #d8ac9c;
+--copper-soft: #2b1f1a;
 --on-copper: var(--accent-on-solid);
 ```
 
 Contrast report:
 
-- Light neutral-11 on neutral-2: 5.70:1 — PASS AA.
-- Light neutral-12 on neutral-2: 12.93:1 — PASS AAA.
-- Light accent-11 on neutral-2: 5.81:1 — PASS AA.
-- Accent-on-solid on accent-9: 6.79:1 — PASS AA.
 - Dark neutral-11 on neutral-2: 8.73:1 — PASS AAA.
 - Dark neutral-12 on neutral-2: 14.24:1 — PASS AAA.
+- Dark accent-11 on neutral-2: 8.60:1 — PASS AAA.
+- Accent-on-solid on accent-9: 6.79:1 — PASS AA.
 
 ## Space, shape, depth
 
@@ -70,7 +68,7 @@ Contrast report:
 - Mobile: single column, numbers above headings, horizontally scrollable navigation when needed.
 - At 48rem: two-column hero and service/result compositions.
 - At 64rem: the section index occupies a true outer gutter and headings/content form an asymmetric 3/8 grid.
-- The metric strip uses intrinsic `auto-fit` columns and never hides evidence.
+- The credential strip uses intrinsic `auto-fit` columns and never hides evidence.
 
 ## Motion
 
@@ -85,5 +83,4 @@ Contrast report:
 - No serif body copy.
 - No second decorative accent hue.
 - No icon confetti; imagery appears only where it carries evidence.
-- No invented client logos, statistics, or certification claims.
-
+- No client quotes, KPI figures, invented statistics, logos, or certification claims.

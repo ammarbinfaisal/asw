@@ -127,8 +127,8 @@ export default function Home() {
       <section className={styles.metricStrip} aria-label="Credentials and outcomes">
         <div className={`${styles.shell} ${styles.metricGrid}`}>
           <div className={styles.metric}>
-            <strong>30%</strong>
-            <span>reduction in CPA</span>
+            <span className={styles.metricMonogram} aria-hidden="true">✓</span>
+            <span>conversion tracking focus</span>
           </div>
           <div className={styles.metric}>
             <Image src="/icons8-google-ads.svg" alt="" width={36} height={36} />
@@ -210,11 +210,11 @@ export default function Home() {
           </div>
           <div className={styles.resultsGrid}>
             <article className={styles.featureResult}>
-              <p className={styles.resultValue}>30%</p>
-              <h3>Reduction in CPA</h3>
+              <p className={styles.resultKicker}>Conversion intelligence</p>
+              <h3>Less wasted spend. Clearer optimization.</h3>
               <p>
-                Advanced conversion tracking and campaign optimization significantly lowered
-                acquisition costs.
+                Advanced conversion tracking and campaign optimization reveal where budget can
+                work harder and where a campaign needs a better decision.
               </p>
             </article>
             <article className={styles.secondaryResult}>
@@ -225,18 +225,6 @@ export default function Home() {
                 conversions.
               </p>
             </article>
-            <figure className={styles.quote}>
-              <blockquote>
-                “Abdul Samad’s expertise in PPC and analytics transformed our digital strategy,
-                delivering exceptional results.”
-              </blockquote>
-              <figcaption>
-                <span>Fullstacktics</span>
-                <a href="https://fullstacktics.com" target="_blank" rel="noreferrer">
-                  Visit source <ArrowUpRight aria-hidden="true" />
-                </a>
-              </figcaption>
-            </figure>
             <p className={styles.caseNote}>Detailed case studies are available upon request.</p>
           </div>
         </div>

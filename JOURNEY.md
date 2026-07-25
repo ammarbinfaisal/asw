@@ -22,7 +22,7 @@ For visual tokens and composition, see `DESIGN.md`.
 |---|---|---|---|---|---|
 | Orient | Reads promise and scope | “Is this relevant to my spend?” | Cautious | Hero | Lead with the business outcome and specialist category |
 | Evaluate | Scans credentials, services, and method | “Can he diagnose my situation?” | Curious | Metric strip and expertise | Make capability concrete without jargon |
-| Verify | Reviews result and testimonial | “Where is the evidence?” | Reassured | Results | Put the 30% CPA result and named source near the CTA |
+| Verify | Reviews measurement approach and conversion impact | “Where is the evidence?” | Reassured | Results | Explain the decision-making value of tracking near the CTA |
 | Contact | Opens WhatsApp | “Can I discuss this without a sales maze?” | Decisive | Contact panel | One direct, clearly labeled action |
 
 **Decision model:** Google messy middle (2020); the visitor can move between expertise and evidence before contacting.  
@@ -62,10 +62,10 @@ For visual tokens and composition, see `DESIGN.md`.
 
 1. Header — identity, speciality, compact in-page navigation.
 2. Hero — business-growth promise, supporting scope, primary and evidence CTAs.
-3. Evidence strip — certifications, instrumentation expertise, 30% CPA result.
+3. Evidence strip — certifications and instrumentation expertise.
 4. Expertise — four existing PPC and growth service areas.
 5. Approach — audit, instrument, optimize.
-6. Results — CPA result, conversion impact, Fullstacktics testimonial.
+6. Results — conversion intelligence and optimization impact.
 7. About — existing professional biography.
 8. Contact — consultation promise and WhatsApp CTA.
 9. Footer — website, LinkedIn, copyright.
@@ -77,7 +77,6 @@ For visual tokens and composition, see `DESIGN.md`.
 ## Marketing spine
 
 **Awareness:** solution-aware.  
-**Sequence:** offer → proof → solution → method → results/testimonial → guide credibility → final CTA.  
+**Sequence:** offer → proof → solution → method → results → guide credibility → final CTA.
 **StoryBrand role:** visitor is the hero; Abdul is the expert guide.  
 **Conversion principle:** Shapiro’s `Purchase = Desire − (Labor + Confusion)`; every block either adds evidence or makes the engagement clearer.
-
